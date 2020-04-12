@@ -6,6 +6,10 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
+    dataBinding {
+        enabled = true
+    }
+
     defaultConfig {
         applicationId "com.alext.myrunning"
         minSdkVersion 24
@@ -50,10 +54,20 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
-    // LiveData
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
+    implementation 'com.jakewharton.rxbinding3:rxbinding:3.0.0'
+    implementation 'com.jakewharton.rxbinding3:rxbinding-core:3.1.0'
+    implementation 'com.jakewharton.rxbinding3:rxbinding-appcompat:3.1.0'
+    implementation 'com.jakewharton.rxbinding3:rxbinding-drawerlayout:3.1.0'
+    implementation 'com.jakewharton.rxbinding3:rxbinding-leanback:3.1.0'
+    implementation 'com.jakewharton.rxbinding3:rxbinding-recyclerview:3.1.0'
+    implementation 'com.jakewharton.rxbinding3:rxbinding-slidingpanelayout:3.1.0'
+    implementation 'com.jakewharton.rxbinding3:rxbinding-swiperefreshlayout:3.1.0'
+    implementation 'com.jakewharton.rxbinding3:rxbinding-viewpager:3.1.0'
+    implementation 'com.jakewharton.rxbinding3:rxbinding-viewpager2:3.1.0'
 }

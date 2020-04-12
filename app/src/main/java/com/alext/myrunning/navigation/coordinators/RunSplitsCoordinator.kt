@@ -6,5 +6,6 @@ class RunSplitsCoordinator(private val navigator: Navigator) {
 
     fun start() {
         navigator.showRunSplitsFragment()
+
     }
 }
