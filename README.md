@@ -1,6 +1,6 @@
 # MyRunning
 
-# Description
+### Description
 
 A simple running app.
 
@@ -14,7 +14,7 @@ Some features I'd like to add is:
 * Time splits e.g if you want to run a 3.30 marathon what minute/miles or minute/km should you run. 
 * Run Tracking 
 * Integration with strava and other third parties
-* Strecthing walkthroughs
+* Stretching walkthroughs
 * Training plans
 
 
