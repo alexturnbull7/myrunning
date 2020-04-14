@@ -7,11 +7,17 @@ import java.math.RoundingMode
 
 class RunSplitsViewModel: ViewModel() {
 
-    val selectedDistance = MutableLiveData<String>("")
-    val selectedTime = MutableLiveData<String>("")
-    val pace = MutableLiveData<String>()
+    val selectedDistance = MutableLiveData<BigDecimal>()
+    val selectedHours = MutableLiveData<BigDecimal>()
+    val selectedMinutes = MutableLiveData<BigDecimal>()
+    val selectedSeconds = MutableLiveData<BigDecimal>()
+    val paceMinutes = MutableLiveData<String>()
+    val paceSeconds = MutableLiveData<String>()
 
     fun calculatePace() {
-        pace.postValue((BigDecimal(selectedTime.value).setScale(5) / BigDecimal(selectedDistance.value).setScale(5)).setScale(2).toPlainString())
+        val time = (selectedHours.value!! * BigDecimal(60)) + selectedMinutes.value!! + (selectedSeconds.value!! / BigDecimal(60))
+        paceMinutes.postValue((time.setScale(5) / selectedDistance.value!!.setScale(5)).setScale(0, RoundingMode.HALF_UP).toPlainString() + " Minutes")
+        paceSeconds.postValue((BigDecimal((time.setScale(5) / selectedDistance.value!!.setScale(5)).toPlainString().split(".")[1]) * BigDecimal(60)).setScale(1, RoundingMode.HALF_UP).toString().first()
+            .toString() + " Seconds")
     }
 }

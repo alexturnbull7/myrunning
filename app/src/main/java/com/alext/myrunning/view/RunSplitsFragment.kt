@@ -14,6 +14,7 @@ import com.alext.myrunning.viewmodel.RunSplitsViewModel
 import com.jakewharton.rxbinding3.view.clicks
 import com.jakewharton.rxbinding3.widget.*
 import kotlinx.android.synthetic.main.run_splits.*
+import java.math.BigDecimal
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -46,13 +47,25 @@ class RunSplitsFragment : Fragment() {
 
     private fun setupBindings(view: View) {
         view.findViewById<RadioGroup>(R.id.distanceRadio)?.checkedChanges()?.subscribe({
-            if (it > 0) vm.selectedDistance.postValue("26.2")
+            if (it > 0) vm.selectedDistance.postValue(BigDecimal.valueOf(26.2))
         }) {
             error("error attaching binding to radio group")
         }
 
-        time.textChanges()?.subscribe({
-            if (!it.isNullOrBlank()) vm.selectedTime.postValue(it.toString())
+        hours.textChanges()?.subscribe({
+            if (!it.isNullOrBlank()) vm.selectedHours.postValue(BigDecimal(it.toString()))
+        }) {
+            error("error attaching binding to text field")
+        }
+
+        minutes.textChanges()?.subscribe({
+            if (!it.isNullOrBlank()) vm.selectedMinutes.postValue(BigDecimal(it.toString()))
+        }) {
+            error("error attaching binding to text field")
+        }
+
+        seconds.textChanges()?.subscribe({
+            if (!it.isNullOrBlank()) vm.selectedSeconds.postValue(BigDecimal(it.toString()))
         }) {
             error("error attaching binding to text field")
         }

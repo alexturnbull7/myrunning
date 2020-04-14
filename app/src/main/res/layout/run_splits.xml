@@ -43,12 +43,48 @@
         android:layout_height="wrap_content"
         android:text="In: "/>
 
-    <EditText
-        android:id="@+id/time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    </EditText>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hours: "/>
+
+        <EditText
+            android:id="@+id/hours"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Minutes: "/>
+
+        <EditText
+            android:id="@+id/minutes"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seconds: "/>
+
+        <EditText
+            android:id="@+id/seconds"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+
+
+
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/calculateButton"
@@ -60,7 +96,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@{viewModel.pace}" />
+        android:text="@{viewModel.paceMinutes}" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{viewModel.paceSeconds}" />
 
     </LinearLayout>
 
